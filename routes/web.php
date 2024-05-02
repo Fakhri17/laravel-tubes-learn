@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Coba;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+
+Route::get('/hello', 'App\Http\Controllers\Coba@index');
+Route::get('/admin', [Coba::class, 'welcome']);
